@@ -32,7 +32,8 @@ const dbConn = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE
+  database: process.env.DB_DATABASE,
+  port: 3306
 });
 
 dbConn.connect(function (err) {
@@ -42,7 +43,7 @@ dbConn.connect(function (err) {
   }
   console.log("Database was connected");
   require("./routes")({ app, dbConn, upload });
-  
+
 });
 
 app.listen(process.env.DB_SERVER || 3003, () => {
