@@ -32,8 +32,7 @@ const dbConn = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
-  port: 3306,
+  database: process.env.DB_DATABASE
 });
 
 dbConn.connect(function (err) {
@@ -46,6 +45,6 @@ dbConn.connect(function (err) {
   
 });
 
-app.listen(process.env.DB_PORT || 3003, () => {
+app.listen(process.env.DB_SERVER || 3003, () => {
   console.log(`Server is listening on port `);
 });
