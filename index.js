@@ -47,5 +47,5 @@ dbConn.connect(function (err) {
 });
 
 app.listen(process.env.DB_PORT || 3003, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server is listening on port `);
 });
