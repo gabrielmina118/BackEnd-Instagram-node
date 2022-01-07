@@ -29,10 +29,10 @@ const upload = multer({ storage: storage });
 
 // create datbase connection
 const dbConn = mysql.createConnection({
-  host: "35.226.146.116",
-  user: "gabriel-mina",
-  password: "XNVX2wCA89jnwJ$A",
-  database: "teachers-gabriel-mina",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_DATABASE,
   port: 3306,
 });
 
