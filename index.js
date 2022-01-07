@@ -5,7 +5,7 @@ const multer = require("multer");
 const mysql = require("mysql2");
 const path = require("path");
 
-const port = process.env.DB_PORT || 8080;
+
 
 const app = express();
 
@@ -46,6 +46,6 @@ dbConn.connect(function (err) {
   
 });
 
-app.listen(port, () => {
+app.listen(process.env.DB_PORT || 3003, () => {
   console.log(`Server is listening on port ${port}`);
 });
